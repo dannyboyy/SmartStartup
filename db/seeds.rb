@@ -8,11 +8,32 @@
 
 require 'faker'
 
+Category.delete_all
+Resource.delete_all
+
 # Create Categories
+Category.create!(
+	name: '域名'
+)
+Category.create!(
+	name: '托管'
+)
+Category.create!(
+	name: '设计'
+)
+Category.create!(
+	name: '法律'
+)
+Category.create!(
+	name: 'HR'
+)
+Category.create!(
+	name: '市场'
+)
 categories = Category.all
 
 # Create Resources
-10.times do
+6.times do
 	Resource.create!(
 		category: categories.sample,
 		name: Faker::Company.name,
