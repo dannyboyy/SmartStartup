@@ -22,7 +22,7 @@
 
             <p><%= @resource.description %></p>
             
-            <%= link_to @resource.website, class: "btn btn-primary" do %>
+            <%= link_to @resource.website, target: '_blank', class: "btn btn-primary" do %>
               去看看<span class="glyphicon glyphicon-chevron-right"></span>
             <% end %>
 
@@ -59,6 +59,6 @@
     <div id="uyan_frame"></div>
     <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2009366"></script>
     <!-- UY END -->
-    
+
 </div>
 <!-- /.container -->
