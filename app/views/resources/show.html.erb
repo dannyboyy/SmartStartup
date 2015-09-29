@@ -8,7 +8,7 @@
 
             <h1 class="page-header">
                 <%= @resource.name %>
-                <small><%= @category.name %></small>
+                <small><%= link_to @category.name, category_path %></small>
             </h1>
 
             <!-- First Resource Post -->
@@ -23,7 +23,7 @@
             <p><%= @resource.description %></p>
             
             <%= link_to @resource.website, class: "btn btn-primary" do %>
-              <%= @resource.name %><span class="glyphicon glyphicon-chevron-right"></span>
+              去看看<span class="glyphicon glyphicon-chevron-right"></span>
             <% end %>
 
             <hr>
