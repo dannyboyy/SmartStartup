@@ -10,6 +10,7 @@ class ResourcesController < ApplicationController
   # GET /resources/1
   # GET /resources/1.json
   def show
+    @category = Category.find(params[:category_id])
   end
 
   # GET /resources/new
@@ -58,6 +59,15 @@ class ResourcesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to resources_url, notice: 'Resource was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def import
+    begin
+      Resource.import(params[:file])
+      redirect_to root_url, notice: "Resources imported."
+    rescue
+      redirect_to root_url, notice: "Invalid CSV file format."
     end
   end
 

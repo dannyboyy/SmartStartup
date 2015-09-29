@@ -1,24 +1,58 @@
-<p id="notice"><%= notice %></p>
+<!-- Page Content -->
+<div class="container">
 
-<p>
-  <strong>Name:</strong>
-  <%= @resource.name %>
-</p>
+    <div class="row">
 
-<p>
-  <strong>Category:</strong>
-  <%= @resource.category %>
-</p>
+        <!-- Resource Entries Column -->
+        <div class="col-md-8">
 
-<p>
-  <strong>Tagline:</strong>
-  <%= @resource.tagline %>
-</p>
+            <h1 class="page-header">
+                <%= @resource.name %>
+                <small><%= @category.name %></small>
+            </h1>
 
-<p>
-  <strong>Website:</strong>
-  <%= @resource.website %>
-</p>
+            <!-- First Resource Post -->
+            <p class="lead">
+                <%= @resource.tagline %>
+            </p>
+            
+            <img class="img-responsive" src="http://placehold.it/700x300" alt="">
 
-<%= link_to 'Edit', edit_resource_path(@resource) %> |
-<%= link_to 'Back', resources_path %>
+            <hr>
+
+            <p><%= @resource.description %></p>
+            
+            <%= link_to @resource.website, class: "btn btn-primary" do %>
+              <%= @resource.name %><span class="glyphicon glyphicon-chevron-right"></span>
+            <% end %>
+
+            <hr>
+        </div>
+
+        <!-- Resource Sidebar Widgets Column -->
+        <div class="col-md-4">
+            <!-- Resource Categories Well -->
+            <div class="well">
+                <h4>Resource Categories</h4>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <ul class="list-unstyled">
+                            <li><a href="#">Category Name</a>
+                            </li>
+                            <li><a href="#">Category Name</a>
+                            </li>
+                            <li><a href="#">Category Name</a>
+                            </li>
+                            <li><a href="#">Category Name</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->

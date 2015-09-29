@@ -8,9 +8,6 @@
         <td><%= resource.category %></td>
         <td><%= resource.tagline %></td>
         <td><%= resource.website %></td>
-        <td><%= link_to 'Show', resource %></td>
-        <td><%= link_to 'Edit', edit_resource_path(resource) %></td>
-        <td><%= link_to 'Destroy', resource, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -18,4 +15,12 @@
 
 <br>
 
-<%= link_to 'New Resource', new_resource_path %>
+<!-- Import Button -->
+<h2>Import Resources</h2>
+
+<%= form_tag import_category_resources_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
+
+<!-- Import Button Ends -->
