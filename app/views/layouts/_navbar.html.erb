@@ -24,8 +24,21 @@
                     <%= link_to 'New Category', new_category_path %>
                 </li>
             </ul>
+            <ul class="nav navbar-nav pull-right">
+                <% if current_user %>
+                  <li>
+                      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>  
+                  </li>
+                <% else %>
+                <li>
+                  <%= link_to "Sign In", new_user_session_path %>
+                  </li>
+                <% end %>
+            </ul>
         </div>
         <!-- /.navbar-collapse -->
+
+
     </div>
     <!-- /.container -->
 </nav>
