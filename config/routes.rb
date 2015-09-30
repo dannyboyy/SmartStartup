@@ -21,6 +21,7 @@
 #
 
 Rails.application.routes.draw do
+  resources :reviews
   post '/rate' => 'rater#create', :as => 'rate'
   devise_for :users
   

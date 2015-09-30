@@ -19,8 +19,6 @@
 class Resource < ActiveRecord::Base
   belongs_to :category
 
-  ratyrate_rateable 'cost', 'overall'
-
   def self.import(file)
   	CSV.foreach(file.path, headers: true)	do |row|
   		resource_hash = row.to_hash

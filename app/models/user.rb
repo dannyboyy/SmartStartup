@@ -28,6 +28,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  # Required for raty gem
-  ratyrate_rater
+  has_many :reviews, dependent: :destroy
+
 end
