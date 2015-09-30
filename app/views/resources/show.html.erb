@@ -8,7 +8,7 @@
 
             <h1 class="page-header">
                 <%= @resource.name %>
-                <small><%= link_to @category.name, category_path %></small>
+                <small><%= link_to @category.name, category_path(@resource.category_id) %></small>
             </h1>
 
             <!-- First Resource Post -->
