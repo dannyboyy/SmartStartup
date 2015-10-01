@@ -21,12 +21,11 @@
 #
 
 Rails.application.routes.draw do
-  resources :reviews
-  post '/rate' => 'rater#create', :as => 'rate'
   devise_for :users
   
   resources :categories do
   	resources :resources do 
+  		resources :reviews, except: [:show, :index]
   		collection { post :import }
   	end
   end

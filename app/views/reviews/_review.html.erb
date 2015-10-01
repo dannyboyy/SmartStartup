@@ -1,0 +1,9 @@
+<p>
+  <%= review.rating %>
+  <%= review.comment %>
+  <% if review.user %>
+    <small>
+      <em><%= review.user.email %></em>
+    </small>
+  <% end %>
+</p> 

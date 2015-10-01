@@ -1,17 +1,7 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
+  before_action :set_resource
   before_action :authenticate_user!
-
-  # GET /reviews
-  # GET /reviews.json
-  def index
-    @reviews = Review.all
-  end
-
-  # GET /reviews/1
-  # GET /reviews/1.json
-  def show
-  end
 
   # GET /reviews/new
   def new
@@ -25,17 +15,14 @@ class ReviewsController < ApplicationController
   # POST /reviews
   # POST /reviews.json
   def create
-    @review = Review.new(review_params)
+    @category = Category.find(params[:category_id])
+    @resource = @category.resources.find(params[:resource_id])
+    @review = @resource.reviews.new(review_params)
     @review.user_id = current_user.id
-
-    respond_to do |format|
-      if @review.save
-        format.html { redirect_to @review, notice: 'Review was successfully created.' }
-        format.json { render :show, status: :created, location: @review }
-      else
-        format.html { render :new }
-        format.json { render json: @review.errors, status: :unprocessable_entity }
-      end
+    if @review.save
+      redirect_to [@category, @resource], notice: "review saved successfully."
+    else
+      redirect_to [@category, @resource], notice: "review failed to save."
     end
   end
 
@@ -67,6 +54,10 @@ class ReviewsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_review
       @review = Review.find(params[:id])
+    end
+
+    def set_resource
+      @resource = Resource.find(params[:resource_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

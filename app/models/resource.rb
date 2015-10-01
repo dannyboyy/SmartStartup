@@ -18,6 +18,7 @@
 
 class Resource < ActiveRecord::Base
   belongs_to :category
+  has_many :reviews
 
   def self.import(file)
   	CSV.foreach(file.path, headers: true)	do |row|

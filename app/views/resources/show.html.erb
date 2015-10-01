@@ -50,6 +50,16 @@
                 </div>
                 <!-- /.row -->
             </div>
+            
+            <!-- Reviews -->
+            <div class="row">
+              <h2>Reviews</h2>
+              <div class='col-md-12'>
+                <%= render @reviews %>
+                <%= render 'reviews/form', category: @category, review: @review, resource: @resource %>
+              </div>
+            </div>
+
         </div>
 
     </div>
@@ -61,4 +71,4 @@
     <!-- UY END -->
 
 </div>
-<!-- /.container -->
+<!-- /.container
