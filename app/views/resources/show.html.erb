@@ -1,74 +1,89 @@
 <!-- Page Content -->
 <div class="container">
 
+    <!-- Resource Name -->
     <div class="row">
+      <h1 class="page-header">
+        <%= @resource.name %>
+        <small><%= link_to @category.name, category_path(@resource.category_id) %></small>
+      </h1>
 
-        <!-- Resource Entries Column -->
-        <div class="col-md-8">
+      <p class="lead">
+        <%= @resource.tagline %>
+      </p>
 
-            <h1 class="page-header">
-                <%= @resource.name %>
-                <small><%= link_to @category.name, category_path(@resource.category_id) %></small>
-            </h1>
+    </div>
+    <!-- END -->
 
-            <!-- First Resource Post -->
-            <p class="lead">
-                <%= @resource.tagline %>
-            </p>
+    <div class="row">
+      <div class="col-md-8">
+        <img class="img-responsive" src="http://placehold.it/700x300" alt="">
 
-            <img class="img-responsive" src="http://placehold.it/700x300" alt="">
+        <hr>
 
-            <hr>
-
-            <p><%= @resource.description %></p>
-            
-            <%= link_to @resource.website, target: '_blank', class: "btn btn-primary" do %>
+        <p><%= @resource.description %></p>
+        
+        <hr>
+        
+        <%= link_to @resource.website, target: '_blank', class: "btn btn-primary" do %>
               去看看<span class="glyphicon glyphicon-chevron-right"></span>
-            <% end %>
+        <% end %>
+      </div>
 
-            <hr>
-        </div>
-
-        <!-- Resource Sidebar Widgets Column -->
-        <div class="col-md-4">
-            <!-- Resource Categories Well -->
-            <div class="well">
-                <h4>Resource Categories</h4>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <ul class="list-unstyled">
-                            <li><a href="#">Category Name</a>
-                            </li>
-                            <li><a href="#">Category Name</a>
-                            </li>
-                            <li><a href="#">Category Name</a>
-                            </li>
-                            <li><a href="#">Category Name</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- /.row -->
+      <!-- Resource Sidebar Widgets Column -->
+      <div class="col-md-4">
+          <!-- Resource Categories Well -->
+        <div class="well">
+          <h4>Resource Categories</h4>
+          <div class="row">
+            <div class="col-lg-6">
+              <ul class="list-unstyled">
+                <li><a href="#">Category Name</a>
+                </li>
+                <li><a href="#">Category Name</a>
+                </li>
+                <li><a href="#">Category Name</a>
+                </li>
+                <li><a href="#">Category Name</a>
+                </li>
+              </ul>
             </div>
-            
-            <!-- Reviews -->
-            <div class="row">
-              <h2>Reviews</h2>
-              <div class='col-md-12'>
+          </div>
+          <!-- /.row -->
+        </div>
+          
+        <!-- Reviews BEGIN -->
+        <div class="well">
+          <h4>Reviews</h4>
+          <div class="row">
+              <div class="col-lg-6">                      
                 <%= render @reviews %>
                 <%= render 'reviews/form', category: @category, review: @review, resource: @resource %>
               </div>
-            </div>
-
+          </div>
         </div>
-
+        <!-- Reviews END -->
+      </div>
     </div>
-    <!-- /.row -->
 
-    <!-- UY BEGIN -->
-    <div id="uyan_frame"></div>
-    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2009366"></script>
-    <!-- UY END -->
+    <hr>
 
 </div>
-<!-- /.container
+<!-- /.container -->
+
+<!-- Raty BEGIN-->
+<script>
+    $('.star-rating').raty({
+        path: '/assets/',
+        readOnly: true,
+        score: function() {
+        return $(this).attr('data-score');
+      }
+    });
+</script>
+<!-- Raty END -->
+
+<!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2009366"></script>
+<!-- UY END

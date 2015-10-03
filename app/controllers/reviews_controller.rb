@@ -20,9 +20,9 @@ class ReviewsController < ApplicationController
     @review = @resource.reviews.new(review_params)
     @review.user_id = current_user.id
     if @review.save
-      redirect_to [@category, @resource], notice: "review saved successfully."
+      redirect_to [@category, @resource], notice: "Review saved successfully."
     else
-      redirect_to [@category, @resource], notice: "review failed to save."
+      redirect_to [@category, @resource], notice: "Review failed to save."
     end
   end
 

@@ -1,6 +1,7 @@
 <p>
-  <%= review.rating %>
+  <div class="star-rating" data-score=<%= review.rating %> ></div> 
   <%= review.comment %>
+
   <% if review.user %>
     <small>
       <em><%= review.user.email %></em>
