@@ -14,6 +14,12 @@ class ResourcesController < ApplicationController
     @resource = Resource.find(params[:id])
     @reviews = @resource.reviews
     @review = @resource.reviews.build
+
+    if @review.blank?
+      @avg_rating = 0
+    else
+      @avg_rating = @reviews.average(:rating).round(2)
+    end
   end
 
   # GET /resources/new

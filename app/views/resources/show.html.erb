@@ -24,7 +24,7 @@
         <p><%= @resource.description %></p>
         
         <hr>
-        
+
         <%= link_to @resource.website, target: '_blank', class: "btn btn-primary" do %>
               去看看<span class="glyphicon glyphicon-chevron-right"></span>
         <% end %>
@@ -56,7 +56,9 @@
         <div class="well">
           <h4>Reviews</h4>
           <div class="row">
-              <div class="col-lg-6">                      
+              <div class="col-lg-6"> 
+                <div class="star-rating" data-score=<%= @avg_rating %> ></div>
+                <em><%= "#{@reviews.count} reviews" %></em>
                 <%= render @reviews %>
                 <%= render 'reviews/form', category: @category, review: @review, resource: @resource %>
               </div>
@@ -67,6 +69,11 @@
     </div>
 
     <hr>
+
+    <!-- UY BEGIN -->
+    <div id="uyan_frame"></div>
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2009366"></script>
+    <!-- UY END -->
 
 </div>
 <!-- /.container -->
@@ -82,8 +89,3 @@
     });
 </script>
 <!-- Raty END -->
-
-<!-- UY BEGIN -->
-<div id="uyan_frame"></div>
-<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2009366"></script>
-<!-- UY END
