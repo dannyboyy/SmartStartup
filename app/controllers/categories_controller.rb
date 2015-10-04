@@ -11,6 +11,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1.json
   def show
     @resources = @category.resources
+    @categories = Category.all
   end
 
   # GET /categories/new
