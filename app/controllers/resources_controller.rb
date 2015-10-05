@@ -11,6 +11,7 @@ class ResourcesController < ApplicationController
   # GET /resources/1.json
   def show
     @category = Category.find(params[:category_id])
+    @categories = Category.all
     @resource = Resource.find(params[:id])
     @reviews = @resource.reviews
     @review = @resource.reviews.build
