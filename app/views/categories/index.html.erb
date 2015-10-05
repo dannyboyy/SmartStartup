@@ -11,18 +11,34 @@
     </div>
     <!-- /.row -->
     
-    <!-- Projects Row -->
+    <!-- Category Row -->
     <div class="row">
       <% @categories.each do |category| %>
-          <div class="col-md-4 portfolio-item">
+          <div class="col-md-4 col-sm-6 col-xs-6 col-mob">
+            <!-- Item -->
+            <div class="ui-item">
+              <!-- Image -->
               <%= link_to category do %>
                   <img class="img-responsive" src="http://placehold.it/700x400" alt="">
               <% end %>
-              <h3>
-                <%= link_to category do %>
-                  <strong><%= category.name %></strong>
-                <% end %>
-              </h3>
+              <!-- Image Hover -->
+              <div class="image-hover bg-green ui-right">
+                <!-- Heading -->
+                <h3>
+                  <%= link_to category do %>
+                    <strong><%= category.name %></strong>
+                  <% end %>
+                </h3>
+              </div>
+
+              <div class="title">
+                <h5>
+                  <%= link_to category do %>
+                    <strong><%= category.name %></strong>
+                  <% end %>
+                </h5>
+              </div> 
+            </div>
           </div>
       <% end %>
     </div><!-- /.row -->

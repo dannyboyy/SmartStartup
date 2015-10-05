@@ -1,3 +1,91 @@
 // Place all the styles related to the categories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Font
+h3 {
+	font-size: 22px;
+	line-height: 37px;
+}
+
+// Background Color
+.bg-green {
+  background-color: #51d466 !important;
+}
+
+/* Column Mobile */
+@media(max-width: 500px){
+	 .col-mob{
+		width:100%;
+	}
+}
+/* Item */ 
+ .ui-item{
+	max-width:260px;
+	margin:20px auto;
+	position:relative;
+	overflow:hidden;
+	border-radius:4px;
+	box-shadow:0px 0px 15px rgba(0,0,0,0.1);
+}
+/* Image Hover */
+ .ui-item .image-hover{
+	padding:10px 15px;
+	height:100%;
+	width:100%;
+	position:absolute;
+	top:0px;
+	-webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+/* Right Hover */
+ .ui-item .image-hover.ui-right{	
+	right:-250px;
+}
+ .ui-item:hover .image-hover.ui-right{
+	right:0px;
+}
+/* Left Hover */
+ .ui-item .image-hover.ui-left{	
+	left:-190px;
+}
+ .ui-item:hover .image-hover.ui-left{
+	left:0px;
+}
+/* Heading */
+ .ui-item .image-hover h3{
+	font-size:22px;
+	line-height:32px;
+	font-weight:300;
+	margin-bottom:5px;
+}
+@media(max-width: 1200px) and (min-width: 991px){
+	 .ui-item .image-hover h3{
+		font-size:18px;
+		line-height:28px;
+	}
+}
+@media(max-width: 350px){
+	 .ui-item .image-hover h3{
+		font-size:16px;
+		line-height:18px;
+	}
+}
+/* Link */
+ .ui-item .image-hover h3 a{
+	color:#fff;
+}
+/* Paragraph */
+ .ui-item .image-hover p{
+	color:#fff;
+	font-size:13px;
+	line-height:23px;
+}
+@media(max-width: 274px){
+	 .ui-item .image-hover p{
+		font-size:12px;
+		line-height:22px;
+	}
+}
