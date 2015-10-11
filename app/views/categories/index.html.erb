@@ -4,44 +4,49 @@
     <!-- Page Header -->
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">启航
-                <small>纯干货创业工具资料!</small>
+            <h1 class="page-header">
+              纯干货创业工具资料!
             </h1>
         </div>
     </div>
     <!-- /.row -->
-    
-    <!-- Category Row -->
-    <div class="row">
-      <% @categories.each do |category| %>
-          <div class="col-md-4 col-sm-6 col-xs-6 col-mob">
-            <!-- Item -->
-            <div class="ui-item">
-              <!-- Image -->
-              <%= link_to category do %>
-                  <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-              <% end %>
-              <!-- Image Hover -->
-              <div class="image-hover bg-green ui-right">
-                <!-- Heading -->
-                <h3>
-                  <%= link_to category do %>
-                    <strong><%= category.name %></strong>
-                  <% end %>
-                </h3>
-              </div>
 
-              <div class="title">
-                <h5>
-                  <%= link_to category do %>
-                    <strong><%= category.name %></strong>
+    <!-- UI - X Starts -->
+    <div class="ui-142">
+      <div class="container">
+        <div class="row">
+          <% @categories.each do |category| %>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <!-- Item -->
+              <div class="ui-item">
+                <!-- Image -->
+                <%= image_tag "1.jpg", class: "img-responsive" %>
+                <!-- Number of Resources -->
+                <%= link_to category, class: "ui-circle bg-green" do %>
+                  <%= category.resources.count %>
+                <% end %>
+                <!-- Details -->
+                <div class="ui-details">
+                  <!-- Heading -->
+                  <h3>
+                    <%= link_to category do %>
+                      <strong><%= category.name %></strong>
+                    <% end %>
+                  </h3>
+                  <!-- Paragraph -->
+                  <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit ratione.</p>
+                  <!-- Button -->
+                  <%= link_to category, class: "btn btn-green btn-lg" do %>
+                    看一下
                   <% end %>
-                </h5>
-              </div> 
+                </div>
+              </div>
             </div>
-          </div>
-      <% end %>
-    </div><!-- /.row -->
+          <% end %>
+        </div>
+      </div>  
+    </div>
+    <!-- UI - X Ends -->
 
     <hr>
 
