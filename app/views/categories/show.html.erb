@@ -17,17 +17,18 @@
           <%= resource.name %>
         </h3>            
         <div class="row">
-          <div class="col-md-3">
+          <div class="col-md-4 col-sm-6 col-xs-6">
             <%= link_to [@category, resource] do %>
-                <img class="img-responsive" src="http://placehold.it/300x300" alt="">
+                <img class="img-responsive" src="http://placehold.it/200x200" alt="">
             <% end %>
           </div>
 
-          <div class="col-md-9">
+          <div class="col-md-8 col-sm-6 col-xs-6">
             <p><%= resource.tagline %></p>
             
             <%= link_to [@category, resource], class: "btn btn-green" do %>
-              了解产品 <span class="glyphicon glyphicon-chevron-right"></span>
+              了解产品 
+              <span class="glyphicon glyphicon-chevron-right"></span>
             <% end %>
           </div>
         </div>
@@ -36,43 +37,34 @@
 
       <% end %>
     </div>
-
-    <!-- Sidebar Widgets Column -->
-    <div class="col-md-4">
-        <!-- Search Well -->
-        <div class="well">
-            <h4>Blog Search</h4>
-            <div class="input-group">
-                <input type="text" class="form-control">
-                <span class="input-group-btn">
-                    <button class="btn btn-default" type="button">
-                        <span class="glyphicon glyphicon-search"></span>
-                </button>
-                </span>
-            </div>
-            <!-- /.input-group -->
+    
+    <!-- 资料类型 -->
+    <div class="ui-329">
+      <div class="col-md-4">
+        <!-- Item -->
+        <div class="item">
+          <!-- Head -->
+          <div class="head clearfix">
+            <!-- Name and designation -->
+            <h2>资源类型</h2>
+          </div>
+          <!-- Content -->
+          <div class="content">
+            <ul class="list-unstyled">
+              <% @categories.each do |category| %>
+                <li>
+                  <%= link_to category.name, category %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
         </div>
-
-        <!-- Categories Well -->
-        <div class="well">
-            <h4>资源类型</h4>
-            <div class="row">
-                <div class="col-lg-6">
-                    <ul class="list-unstyled">
-                        <% @categories.each do |category| %>
-                            <li>
-                                <%= link_to category.name, category %>
-                            </li>
-                        <% end %>
-                    </ul>
-                </div>
-                <!-- /.col-lg-6 -->
-            </div>
-            <!-- /.row -->
-        </div>
+      </div>
     </div>
+    <!-- 资料类型 -->
+
   </div>
-  
+  <!-- row -->
 </div>
 
 

@@ -18,7 +18,7 @@
 @import "bootstrap";
 
 body {
-    padding-top: 30px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    padding-top: 55px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
 /************************
@@ -31,7 +31,8 @@ body {
 	color: #666666;
 	font-size: 13px;
 	line-height: 23px;
-	background: #f4f8fd;
+	// background: #f4f8fd;
+	background: white;
 	font-family: 'Open Sans', sans-serif;
 	-webkit-font-smoothing: antialiased;
 }

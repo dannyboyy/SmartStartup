@@ -1,15 +1,22 @@
-<%= form_for [category, resource, review] do |f| %>
-  <div class="field">
-    <div id="star-rating"></div>
+<!-- UI - X -->
+<div class="ui-68">
+  <div class="container-fluid"> 
+    <div class="field">
+      <div id="star-rating"></div>
+    </div>
+    <div class="ui-content">
+      <%= form_for [category, resource, review] do |f| %>
+        <!-- TextArea -->
+        <%= f.text_area :comment, class: "form-control", rows: "6" %>
+        <!-- Button -->
+        <div class="ui-buttons clearfix">
+          <!-- Button -->
+          <%= f.submit '提交评论', class: "btn btn-green" %>
+        </div>
+      <% end %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :评论 %><br>
-    <%= f.text_area :comment %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
 
 <!-- Raty BEGIN-->
 <script>

@@ -22,47 +22,60 @@
         <hr>
 
         <p><%= @resource.description %></p>
-        
-        <hr>
-
+      
         <%= link_to @resource.website, target: '_blank', class: "btn btn-green" do %>
               去看看<span class="glyphicon glyphicon-chevron-right"></span>
         <% end %>
+
+        <hr>
+
       </div>
 
-      <!-- Resource Sidebar Widgets Column -->
-      <div class="col-md-4">
-          <!-- Resource Categories Well -->
-        <div class="well">
-          <h4>资源类型</h4>
-          <div class="row">
-            <div class="col-lg-6">
+      <!-- 资料类型 -->
+      <div class="ui-329">
+        <div class="col-md-4">
+          <!-- Item -->
+          <div class="item">
+            <!-- Head -->
+            <div class="head clearfix">
+              <!-- Name and designation -->
+              <h2>资源类型</h2>
+            </div>
+            <!-- Content -->
+            <div class="content">
               <ul class="list-unstyled">
                 <% @categories.each do |category| %>
-                    <li>
-                        <%= link_to category.name, category %>
-                    </li>
+                  <li>
+                    <%= link_to category.name, category %>
+                  </li>
                 <% end %>
               </ul>
             </div>
           </div>
-          <!-- /.row -->
         </div>
-          
-        <!-- Reviews BEGIN -->
-        <div class="well">
-          <h4>评头论足</h4>
-          <div class="row">
-              <div class="col-lg-6"> 
+      </div>
+      <!-- 资料类型 -->
+      
+      <div class="ui-329">
+        <div class="col-md-4">  
+          <!-- Reviews BEGIN -->
+          <div class="item">
+            <div class="head clearfix">
+              <h2>评头论足</h2>            
+            </div>
+            <div class="content">
+              <div class="list-unstyled">
                 <div class="star-rating" data-score=<%= @avg_rating %> ></div>
-                <em><%= "#{@reviews.count} 评论" %></em>
-                <%= render @reviews %>
+                <em><%= "#{@reviews.count} 条评论" %></em>
+                <%= render @reviews %>                
                 <%= render 'reviews/form', category: @category, review: @review, resource: @resource %>
               </div>
+            </div>
           </div>
+          <!-- Reviews END -->
         </div>
-        <!-- Reviews END -->
       </div>
+
     </div>
 
     <hr>
@@ -85,4 +98,4 @@
       }
     });
 </script>
-<!-- Raty END -->
+<!-- Raty END

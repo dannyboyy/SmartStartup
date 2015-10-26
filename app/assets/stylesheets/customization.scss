@@ -1,0 +1,204 @@
+// LOGIN/SIGN-UP PAGE
+/* UI X */
+.ui-50{
+	margin:200px auto;
+}
+.ui-50 .ui-outer{
+	position:absolute;
+	top:0px;
+	left:0px;
+	height:100%;
+	width:100%;
+	background:rgba(0,0,0,0.6);
+}
+.ui-50 .ui-outer a.ui-close{
+	font-size:60px;
+	font-weight:300;
+	color:#aaa;
+	position:absolute;
+	right:40px;
+	top:40px;
+}
+.ui-50 .ui-outer .ui-content{
+	margin:100px auto;
+	max-width:350px;
+	padding:15px 20px;
+	background:#fff;
+	border:1px solid rgba(255,255,255,0.3);
+	box-shadow:0px 0px 15px rgba(0,0,0,0.3);
+}
+.ui-50 .ui-outer h3{
+	text-align:center;
+	font-size:20px;
+	font-weight:400;
+	margin-bottom:20px;
+	padding-bottom:10px;
+	border-bottom:1px dashed #eee;
+}
+.ui-50 .ui-outer form{
+	max-width:270px;
+	margin:10px auto 25px auto;
+}
+.ui-50 .s-media{
+	margin-top:10px;
+	text-align:center;
+}
+.ui-50 .s-media h4{
+	font-size:12px;
+	text-transform:uppercase;
+}
+.ui-50 .s-media a{
+	display:inline-block;
+	width:40px;
+	height:40px;
+	border:0px;
+	text-align:center;
+	line-height:40px;
+	padding:0px;
+	border-radius:100px;
+	margin:5px 2px;
+}
+
+// 资源类型
+.ui-329 .item{
+	max-width:320px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0;
+	margin-bottom: 20px;
+	border-radius:4px;
+	box-shadow:2px 2px 0px 1px rgba(0,0,0,0.06);
+}
+.ui-329 .head{
+	background:#fbfbfb;
+	padding:5px;
+	border:1px solid #ddd;
+	border-bottom:1px solid #e7e7e7;
+	border-top-left-radius:4px;
+	border-top-right-radius:4px;
+}
+.ui-329 .head img{
+	width:80px;
+	float:left;
+	margin:0px;
+	border:2px solid #fff;
+	box-shadow:0px 0px 5px rgba(0,0,0,0.05);
+}
+.ui-329 .head h2{
+	margin-left:100px;
+	font-size:18px;
+	line-height:28px;
+	margin-top:10px;
+	font-weight:400;
+}
+.ui-329 .head h2 a{
+	color:#666;
+}
+.ui-329 .head h2 span{
+	display:block;
+	font-size:14px;
+	line-height:28px;
+	color:#999;
+}
+.ui-329 .content{
+	background:#fff;
+	border:1px solid #ddd;
+	border-top:0px;
+	border-bottom-left-radius:4px;
+	border-bottom-right-radius:4px;
+}
+.ui-329 .content ul{
+	margin:0px;
+}	
+.ui-329 .content ul li{
+	padding:12px 20px;
+	border-bottom:1px solid #eee;
+	font-size:15px;	
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+.ui-329 .content ul li a{
+	color:#777;
+}
+.ui-329 .content ul li:last-child{
+	border-bottom:0px;
+}
+.ui-329 .content ul li:hover{
+	background:#fdfdfd;
+}
+.ui-329 .content ul li i{
+	display:inline-block;
+	width:35px;
+	height:35px;
+	color:#fff;
+	line-height:35px;
+	text-align:center;
+	font-size:15px;
+	border-radius:100px;
+	margin-right:10px;
+	font-weight:normal;
+}
+
+// Overall Rating Padding
+.ui-329  {
+	.star-rating, em {
+		padding: 12px 20px;		
+	}
+}
+
+// Comments Padding
+.ui-329 p {
+	padding: 0px 20px;
+}
+
+// Review Submit Form
+.ui-68{
+	max-width:550px;
+	margin:10px auto;
+	margin-top: -20px; 
+}
+.ui-68 .ui-content{
+	border:1px solid #ddd;
+	border-bottom-left-radius:5px;
+	border-bottom-right-radius:5px;
+}
+/* Form control */
+.ui-68 .form-control{
+	border:0px;
+	color:#999;
+	box-shadow:none;
+	padding:5px;
+	border-radius:0px;
+}
+.ui-68 .form-control:focus{
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    outline: none;
+}
+/* Button and Icon */
+.ui-68 .ui-buttons{
+	border-top:1px solid #ddd;
+	background:#f6f6f6;
+	padding:10px 15px;
+	border-bottom-left-radius:5px;
+	border-bottom-right-radius:5px;
+}
+@media(max-width: 360px){
+	.ui-68 .ui-buttons{
+		text-align:center;
+	}
+}
+/* Button */
+.ui-68 .ui-buttons a.btn{
+	float:right;
+	border:0px;
+}
+@media(max-width: 360px){
+	.ui-68 .ui-buttons a.btn{
+		float:none;
+		margin-bottom:10px;
+	}
+}

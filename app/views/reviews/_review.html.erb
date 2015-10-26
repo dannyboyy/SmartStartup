@@ -1,11 +1,14 @@
+<hr>
 <p>
 	<!-- Unresolved issue with this code... blank star rating shown... -->
   <!-- <div class="star-rating" data-score=<%= review.rating %> ></div>  --> 
   <%= review.comment %>
-
+	
+	<br>
+	
   <% if review.user %>
     <small>
-      <em><%= review.user.email %></em>
+      评论来自： <em><%= review.user.email %></em>
     </small>
   <% end %>
-</p> 
+</p>
